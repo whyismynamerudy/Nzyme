@@ -1,0 +1,38 @@
+.general{
+    background-color: hsla(279, 96%, 70%, 0.639);
+}
+
+.L_TOP{
+    width: 100%;
+  }
+  
+  .L_TOP_L{
+    float: left;
+    width: 10%;
+  }
+  
+  .L_TOP_M{
+    float: left;
+    width: 80%;
+    text-align: center;
+  }
+  
+  .L_TOP_R{
+    float: left;
+    width: 10%;
+  }
+  
+  .NavName{
+    font-size: 3vw;
+    color:#44194d;
+  }
+  
+  .NavLogo{
+    width: 5vw;
+    margin-left: 2vw;
+  }
+  
+  .NavDD{
+    float:left;
+    margin-top: 0.6vw;
+  }
