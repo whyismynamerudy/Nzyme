@@ -29,7 +29,7 @@ function Forms(){
 
         console.log(data);
 
-        await axios.post("/summarize", data)
+        await axios.post("https://newhacks2022heroku.herokuapp.com/summarize", data)
         .then((res) => {
             console.log(res);
             const summarized_data = res['data']['summary'];

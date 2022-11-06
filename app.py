@@ -8,12 +8,12 @@ app = Flask(__name__, static_folder='./new-hacks-frontend/build', static_url_pat
 app.config['PROPAGATE_EXCEPTIONS'] = True
 
 
-@app.route('/')
+@app.route('https://newhacks2022heroku.herokuapp.com/')
 def initalize():
     return app.send_static_file('index.html')
 
 
-@app.route('/summarize', methods=['POST'])
+@app.route('https://newhacks2022heroku.herokuapp.com/summarize', methods=['POST'])
 def summarize_text():
     content_type = request.headers.get('Content-Type')
     if content_type == "application/json":
