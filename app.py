@@ -20,9 +20,19 @@ def summarize_text():
         data = request.get_json()
         input_str = data['text']["inputText"]
         result = summarize(input_str)
+        subset, new = get_keywords(result)
+
+        removed = result
+        for word in subset:
+            removed = removed.replace(word, "<b>" + word + "</b>")
+
         res = {
-            "summary": result
+            "summary": result,
+            "removed": removed,
+            "subset": subset,
+            "new": new
         }
+
         return jsonify(res)
     else:
         return 'Wrong content type'

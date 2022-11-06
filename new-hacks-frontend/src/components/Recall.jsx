@@ -10,7 +10,8 @@ const Recall = (props) => {
     return (
       <div>
         <h1>Active Recall</h1>
-        <p>{props.summary}</p>
+        <p dangerouslySetInnerHTML={ {__html: props.summary} }></p>
+        <p>is this <b>bold</b></p>
         <p>Keywords:</p>
         <ul>
           {words}

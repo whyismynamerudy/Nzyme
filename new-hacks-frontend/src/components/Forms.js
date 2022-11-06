@@ -13,6 +13,7 @@ function Forms(){
     const [used, setUsed] = useState(false);
     const [subset, setSubset] = useState([]);
     const [newWords, setNewWords] = useState([]);
+    const [removed, setRemoved] = useState("");
 
     const handleTextInput = (event) => {
         setInputText(event.target.value);
@@ -34,6 +35,12 @@ function Forms(){
             const summarized_data = res['data']['summary'];
             console.log(String(summarized_data));
             setSummarizedText(String(summarized_data));
+            setRemoved(String(res["data"]["removed"]));
+
+            const [...mydata] = res["data"]["subset"]
+            setSubset(mydata)
+            const [...newdata] = res["data"]["new"]
+            setNewWords(newdata)
         })
 
         // const new_data = {
@@ -50,26 +57,26 @@ function Forms(){
 
     }
 
-    const collect_keywords = () => {
-        const data = {
-            "text": {summarizedText}
-        }
+    // const collect_keywords = () => {
+    //     const data = {
+    //         "text": {summarizedText}
+    //     }
 
-        axios.post('/keywords', data)
-        .then((res) => {
-            console.log(res["data"])
-            const [...mydata] = res["data"]["subset"]
-            setSubset(mydata)
-            const [...newdata] = res["data"]["new"]
-            setNewWords(newdata)
-        })
-    }
+    //     axios.post('/keywords', data)
+    //     .then((res) => {
+    //         console.log(res["data"])
+    //         const [...mydata] = res["data"]["subset"]
+    //         setSubset(mydata)
+    //         const [...newdata] = res["data"]["new"]
+    //         setNewWords(newdata)
+    //     })
+    // }
 
-    useEffect(() => {
-        if (used){
-            collect_keywords()
-        }
-    }, [summarizedText])
+    // useEffect(() => {
+    //     if (used){
+    //         collect_keywords()
+    //     }
+    // }, [summarizedText])
 
     // useEffect(() => {
     //     if (used) {
@@ -144,7 +151,7 @@ function Forms(){
                 </div>
             </div>    
         </div>
-        <Recall used={used} summary={summarizedText} subsetwords={subset}/>
+        <Recall used={used} summary={removed} subsetwords={subset}/>
     </>
     )
 }
