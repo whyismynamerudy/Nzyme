@@ -1,0 +1,30 @@
+.L_Bottom{
+    width: 100%;
+    text-align: center;
+}
+
+.line{
+    margin-top: 5vw;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    border: 0.05vw solid #2b004c;
+}
+
+.ContactTitle{
+    color: #44194d;
+    font-weight: bold;
+}
+
+.FooterButton{
+    background-color: transparent;
+    border: none;
+    margin-top: 2vw;
+}
+
+.FooterButton:hover{
+    background-color: lightgrey;
+}
+
+.Icons{
+    width: 3vw;
+  }

@@ -1,9 +1,6 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
+import {Container, Navbar, Dropdown, DropdownButton} from 'react-bootstrap';
+
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/Navbar.css';

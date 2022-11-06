@@ -23,8 +23,9 @@
   }
   
   .NavName{
-    font-size: 3vw;
     color:#44194d;
+    font-size: 3vw;
+    font-weight: bold;
   }
   
   .NavLogo{

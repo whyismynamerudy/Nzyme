@@ -1,5 +1,6 @@
 import React from 'react';
 import Nav from './components/Navbar';
+import Footer from './components/Footer';
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,6 +12,7 @@ function App() {
     <div className="App">
       <Nav />
       <h1>Hello world</h1>
+      <Footer />
     </div>
   );
 }
