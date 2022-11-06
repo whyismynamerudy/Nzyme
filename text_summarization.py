@@ -28,7 +28,7 @@ def summarize(prompt: str):
         prompt=summary_input,
         return_likelihoods='GENERATION',
         stop_sequences=['"'],
-        max_tokens=50,
+        max_tokens=200,
         temperature=0.7,
         num_generations=5,
         k=0,
