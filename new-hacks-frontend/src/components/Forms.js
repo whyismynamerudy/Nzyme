@@ -11,6 +11,8 @@ function Forms(){
     const [inputText, setInputText] = useState("");
     const [summarizedText, setSummarizedText] = useState("");
     const [used, setUsed] = useState(false);
+    const [subset, setSubset] = useState([]);
+    const [newWords, setNewWords] = useState([]);
 
     const handleTextInput = (event) => {
         setInputText(event.target.value);
@@ -32,7 +34,7 @@ function Forms(){
             const summarized_data = res['data']['summary'];
             console.log(String(summarized_data));
             setSummarizedText(String(summarized_data));
-        });
+        })
 
         // const new_data = {
         //     "text": {summarizedText}
@@ -48,17 +50,39 @@ function Forms(){
 
     }
 
-    // useEffect(async () => {
-    //     const new_data = {
-    //         "text": {summarizedText}
-    //     }
+    const collect_keywords = () => {
+        const data = {
+            "text": {summarizedText}
+        }
 
-    //     await axios.post('/keywords', new_data)
-    //     .then((res) => {
-    //         console.log(res)
-    //         console.log(res["data"])
-    //     })
-    // }, [summarizedText])
+        axios.post('/keywords', data)
+        .then((res) => {
+            console.log(res["data"])
+            const [...mydata] = res["data"]["subset"]
+            setSubset(mydata)
+            const [...newdata] = res["data"]["new"]
+            setNewWords(newdata)
+        })
+    }
+
+    useEffect(() => {
+        if (used){
+            collect_keywords()
+        }
+    }, [summarizedText])
+
+    // useEffect(() => {
+    //     if (used) {
+    //         console.log("i'm in this shit hole");
+    //         console.log(subset)
+    //         console.log(newWords)
+    //         const txt = summarizedText;
+    //         for (let word in subset) {
+    //             txt.replace(word, `<b>${word}</b>`);
+    //         }
+    //         setNewSummarized(txt);
+    //     }
+    // }, [subset])
     
     return(
         <>
@@ -120,7 +144,7 @@ function Forms(){
                 </div>
             </div>    
         </div>
-        <Recall used={used} summary={summarizedText}/>
+        <Recall used={used} summary={summarizedText} subsetwords={subset}/>
     </>
     )
 }

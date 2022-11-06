@@ -1,6 +1,9 @@
 import React from 'react'
 
 const Recall = (props) => {
+
+  const words = props.subsetwords.map(word => <li>{word}</li>);
+
   if (!props.used){
     return <></>
   } else {
@@ -8,6 +11,10 @@ const Recall = (props) => {
       <div>
         <h1>Active Recall</h1>
         <p>{props.summary}</p>
+        <p>Keywords:</p>
+        <ul>
+          {words}
+        </ul>
       </div>
     )
   }
