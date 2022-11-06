@@ -55,5 +55,5 @@ def keywords_text():
         return 'Wrong content type'
 
 
-if __name__ == "__main__":
-    app.run(debug=True ,port=8080,use_reloader=False)
+# if __name__ == "__main__":
+#     app.run(debug=True ,port=8080,use_reloader=False)
