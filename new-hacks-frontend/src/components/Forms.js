@@ -1,9 +1,39 @@
 import React from 'react';
+import axios from 'axios';
+import { useState } from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/Forms.css';
 
 function Forms(){
+
+    const [inputText, setInputText] = useState("");
+    const [summarizedText, setSummarizedText] = useState("");
+
+    const handleTextInput = (event) => {
+        setInputText(event.target.value);
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log('success so far', inputText);
+
+        const data = {
+            "text": {inputText}
+        }
+
+        console.log(data);
+
+        axios.post("/summarize", data)
+        .then((res) => {
+            console.log(res);
+            const summarized_data = res['data']['summary'];
+            console.log(String(summarized_data));
+            setSummarizedText(String(summarized_data));
+        });
+
+    }
+    
     return(
         <div className="Forms">
             <div className="F_ROW">
@@ -16,12 +46,14 @@ function Forms(){
                             type="text"
                             name="name"
                             placeholder="Please type down/upload contents to summarize..... "
+                            onChange={handleTextInput}
                         />
                         </label >
                         <input
                             type="submit"
                             value="Submit"
                             className = "App-Submit1"
+                            onClick={handleSubmit}
                         />
                     </form>
                 </div>
@@ -35,13 +67,14 @@ function Forms(){
                             type="text"
                             name="name"
                             placeholder="Summarize will come out here......"
+                            value={summarizedText}
                         />
                         </label >
-                        <input
+                        {/* <input
                             type="submit"
                             value="Submit"
                             className = "App-Submit2"
-                        />
+                        /> */}
                     </form>
                 </div>
 
