@@ -1,3 +1,9 @@
+.L_Bottom::after{
+    content: "";
+    clear: both;
+    display: block;
+}
+
 .L_Bottom{
     width: 100%;
     text-align: center;
@@ -7,11 +13,11 @@
     margin-top: 5vw;
     margin-left: 3vw;
     margin-right: 3vw;
-    border: 0.05vw solid #2b004c;
+    border: 0.05vw solid #383a4e;
 }
 
 .ContactTitle{
-    color: #44194d;
+    color: #383a4e;
     font-weight: bold;
 }
 
@@ -22,7 +28,7 @@
 }
 
 .FooterButton:hover{
-    background-color: lightgrey;
+    background-color: rgba(211, 211, 211, 0.333);
 }
 
 .Icons{

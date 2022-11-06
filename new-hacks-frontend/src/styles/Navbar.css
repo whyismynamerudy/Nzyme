@@ -1,39 +1,48 @@
+.Nav_ROW::after{
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.Nav_ROW{
+  width: 100%;
+}
+
 .general{
-    background-color: hsla(279, 96%, 70%, 0.639);
+    background-color: #383a4e;
 }
 
 .L_TOP{
     width: 100%;
   }
   
-  .L_TOP_L{
+.L_TOP_L{
     float: left;
     width: 10%;
-  }
+}
   
-  .L_TOP_M{
-    float: left;
-    width: 80%;
-    text-align: center;
-  }
-  
-  .L_TOP_R{
-    float: left;
-    width: 10%;
-  }
-  
-  .NavName{
-    color:#44194d;
-    font-size: 3vw;
-    font-weight: bold;
-  }
-  
-  .NavLogo{
-    width: 5vw;
-    margin-left: 2vw;
-  }
-  
-  .NavDD{
-    float:left;
-    margin-top: 0.6vw;
-  }
+.L_TOP_M{
+  float: left;
+  width: 80%;
+  text-align: center;
+}
+
+.L_TOP_R{
+  float: left;
+  width: 10%;
+}
+
+.NavName{
+  color:#a990ee;
+  font-size: 3vw;
+  font-weight: bold;
+}
+
+.NavLogo{
+  width: 5vw;
+  align-items: center;
+}
+
+.NavDD{
+  margin-top: 1vw;
+}

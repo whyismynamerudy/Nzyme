@@ -9,7 +9,6 @@ function Footer() {
   return (
     <div className='Footer'>
         <Container fuild className="L_Bottom">
-            <p>Descriptions</p>
             <hr className="line"/>
             <h1 className="ContactTitle">CONTACT</h1>
             <Row className="FooterButtons">

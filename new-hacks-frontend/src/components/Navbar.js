@@ -17,7 +17,7 @@ function Nav() {
                                 src="logo.png"
                                 className="NavLogo"
                                 alt="logo"
-                                />
+                            />
                             </Navbar.Brand>
                         </div>
                         
@@ -31,15 +31,19 @@ function Nav() {
                                 key={direction}
                                 id={`dropdown-button-drop-${direction}`}
                                 drop={direction}
-                                variant="dark"
+                                variant="secondary"
                                 title={' Drop'}
                                 className="NavDD"
                             >
-                                <Dropdown.Item eventKey="1" href="#/action-1">Action</Dropdown.Item>
-                                <Dropdown.Item eventKey="2" href="#/action-2">Another action</Dropdown.Item>
-                                <Dropdown.Item eventKey="3" href="#/action-3">Something else here</Dropdown.Item>
+                                <Dropdown.Item eventKey="1" href="#/action-1">Home</Dropdown.Item>
                                 <Dropdown.Divider />
-                                <Dropdown.Item eventKey="4" href="#/action-4">Separated link</Dropdown.Item>
+                                <Dropdown.Item eventKey="2" href="#/action-2">Profile</Dropdown.Item>
+                                <Dropdown.Divider />
+                                <Dropdown.Item eventKey="3" href="#/action-3">Courses</Dropdown.Item>
+                                <Dropdown.Divider />
+                                <Dropdown.Item eventKey="4" href="#/action-4">Active Recall</Dropdown.Item>
+                                <Dropdown.Divider />
+                                <Dropdown.Item eventKey="5" href="#/action-5">About</Dropdown.Item>
                             </DropdownButton>
                             ))}
                         </div>
