@@ -33,9 +33,15 @@
 }
 
 .NavName{
+  transition-duration: 0.4s;
   color:#a990ee;
   font-size: 3vw;
   font-weight: bold;
+  font-family: Berlin Sans FB, Arial Black;
+}
+
+.NavName:hover{
+  color:#ffffff;
 }
 
 .NavLogo{

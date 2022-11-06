@@ -22,7 +22,7 @@ function Nav() {
                         </div>
                         
                         <div className="L_TOP_M">
-                            <Navbar.Brand href="#" className="NavName">Name</Navbar.Brand>
+                            <Navbar.Brand href="#" className="NavName">NZYME</Navbar.Brand>
                         </div>
 
                         <div className="L_TOP_R">
