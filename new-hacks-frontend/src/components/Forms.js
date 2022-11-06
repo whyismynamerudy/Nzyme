@@ -15,7 +15,8 @@ function Forms(){
                             className = "App-Form1"
                             type="text"
                             name="name"
-                            placeholder="Please type down/upload contents to summarize..... "/>
+                            placeholder="Please type down/upload contents to summarize..... "
+                        />
                         </label >
                         <input
                             type="submit"
@@ -33,7 +34,8 @@ function Forms(){
                             className = "App-Form2"
                             type="text"
                             name="name"
-                            placeholder="Summarize will come out here......"/>
+                            placeholder="Summarize will come out here......"
+                        />
                         </label >
                         <input
                             type="submit"
@@ -44,7 +46,17 @@ function Forms(){
                 </div>
 
                 <div className="F_R">
-                    <p>hello</p>
+                    <button className='F_b_1'>
+                        Upload Files
+                    </button>
+
+                    <button className='F_b_2'>
+                        Voice Typing
+                    </button>
+
+                    <button className='F_b_3'>
+                        Save
+                    </button>
                 </div>
             </div>    
         </div>

@@ -13,7 +13,7 @@
 
 .F_L{
  float: left;
- width: 40%;
+ width:40%;
 }
 
 .F_M{
@@ -24,6 +24,8 @@
 .F_R{
   float: left;
   width: 20%;
+  padding-left: 2vw;
+  padding-right: 2vw;
 }
 
 .F_1{
@@ -41,8 +43,9 @@
 .F_1 .App-Form1 {
   display: block;
   width: 100%;
-  height: 70vmin;
+  height: 60vmin;
   border-radius: 2vw;
+  border-width: 0;
   padding: 0.9vw;
   background-color: #383a4e;
   color: azure;
@@ -53,6 +56,7 @@
   width: 100%;
   height: 3vw;
   border-radius: 0.9vw;
+  border-width: 0;
   color:#a990ee;
   background: #383a4e;
 
@@ -74,8 +78,9 @@
 .F_2 .App-Form2 {
   display: block;
   width: 100%;
-  height: 70vmin;
+  height: 60vmin;
   border-radius: 2vw;
+  border-width: 0;
   padding: 0.9vw;
   background-color: #383a4e;
   color: azure;
@@ -86,6 +91,68 @@
   width: 100%;
   height: 3vw;
   border-radius: 0.9vw;
+  border-width: 0;
   color:#a990ee;
   background: #383a4e;
+}
+
+.F_b_1{
+  transition-duration: 0.4s;
+  margin-top: 4.6vw;
+  display: block;
+  width: 100%;
+  height: 5vw;
+  background-color: rgb(48, 18, 86);
+  border-radius: 0.9vw;
+  border: 0vw solid;
+  font-weight: bold;
+  color:azure;
+  font-family: helvetica rounded;
+}
+
+.F_b_1:hover{
+  background-color: #c7b8f2;
+  border: 0.5vw solid rgb(48, 18, 86);
+  color:rgb(48, 18, 86); 
+}
+
+.F_b_2{
+  transition-duration: 0.4s;
+  margin-top: 2vw;
+  display: block;
+  width: 100%;
+  height: 5vw;
+  background-color: rgb(48, 18, 86);
+  border: 0vw solid;
+  border-radius: 0.9vw;
+  font-weight: bold;
+  color:azure;
+  font-family: helvetica rounded;
+}
+
+.F_b_2:hover{
+  background-color: #c7b8f2;
+  border: 0.5vw solid rgb(48, 18, 86);
+  color:rgb(48, 18, 86); 
+}
+
+.F_b_3{
+  transition-duration: 0.4s;
+  margin-top: 5vw;
+  display:block;
+  width: 100%;
+  height: 7vw;
+  background-color: #5f02bc;
+  border-radius: 5vw;
+  border: 0vw solid;
+  font-weight: bold;
+  font-size: 3vw;
+  color:azure;
+  font-family: helvetica rounded;
+}
+
+.F_b_3:hover{
+  background-color: #c7b8f2;
+  border: 0.5vw solid #5f02bc;
+  color:#5f02bc; 
 }
