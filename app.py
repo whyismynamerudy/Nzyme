@@ -53,3 +53,7 @@ def keywords_text():
         return jsonify(res)
     else:
         return 'Wrong content type'
+
+
+if __name__ == "__main__":
+    app.run(debug=True ,port=8080,use_reloader=False)
