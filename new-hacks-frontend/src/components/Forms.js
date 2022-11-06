@@ -1,6 +1,7 @@
 import React from 'react';
-import axios from 'axios';
-import { useState } from 'react';
+import axios, { AxiosHeaders } from 'axios';
+import { useState, useEffect } from 'react';
+import Recall from './Recall';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/Forms.css';
@@ -9,12 +10,13 @@ function Forms(){
 
     const [inputText, setInputText] = useState("");
     const [summarizedText, setSummarizedText] = useState("");
+    const [used, setUsed] = useState(false);
 
     const handleTextInput = (event) => {
         setInputText(event.target.value);
     }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         console.log('success so far', inputText);
 
@@ -24,7 +26,7 @@ function Forms(){
 
         console.log(data);
 
-        axios.post("/summarize", data)
+        await axios.post("/summarize", data)
         .then((res) => {
             console.log(res);
             const summarized_data = res['data']['summary'];
@@ -32,9 +34,34 @@ function Forms(){
             setSummarizedText(String(summarized_data));
         });
 
+        // const new_data = {
+        //     "text": {summarizedText}
+        // }
+
+        // await axios.post('/keywords', new_data)
+        // .then((res) => {
+        //     console.log(res)
+        //     console.log(res["data"])
+        // })
+
+        setUsed(true);
+
     }
+
+    // useEffect(async () => {
+    //     const new_data = {
+    //         "text": {summarizedText}
+    //     }
+
+    //     await axios.post('/keywords', new_data)
+    //     .then((res) => {
+    //         console.log(res)
+    //         console.log(res["data"])
+    //     })
+    // }, [summarizedText])
     
     return(
+        <>
         <div className="Forms">
             <div className="F_ROW">
                 <div className="F_L">
@@ -93,6 +120,8 @@ function Forms(){
                 </div>
             </div>    
         </div>
+        <Recall used={used} summary={summarizedText}/>
+    </>
     )
 }
 
